@@ -1,0 +1,17 @@
+{
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.symfony-project.com"
+        },
+        {
+            "type": "pear",
+            "url": "http://pear.phpunit.de"
+        }
+    ],
+    "require":{
+        "silex/silex": "dev-master",
+        "twig/twig": "1.8.3",
+        "pear-phpunit/PHPUnit": "*"
+    }
+}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content%}
+<form action="/register/" method="post" class="well">
+    <label>メールドレス</label>
+    <div class="control-group">
+        <input type="text" name="member[email]" value="" />
+    </div>
+    <label>パスワード</label>
+    <div class="control-group">
+        <input type="password" name="member[password]" value="" />
+    </div>
+    <div class="control-group">
+        <label class="checkbox">
+        <input type="checkbox" name="member[agree_to_terms]" value="1" />利用規約に同意
+        </label>
+    </div>
+    <button type="submit" class="btn">登録</button>
+</form>
+{% endblock %}

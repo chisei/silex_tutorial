@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<link href="/css/bootstrap.css" rel="stylesheet" />
+<script src="/js/bootstrap.js"></script>
+<title></title>
+</head>
+<body>
+<div id="wrapper">
+<header id="header">
+    <h1><a href="/">Silex Tutor</a></h1>
+    <form action="/login/" method="post">
+        <input type="text" name="email" value="" placeholder="メールアドレス" />
+        <input type="password" name="password" value="" placeholder="パスワード" />
+        <button type="submit" class="btn">ログイン</button>
+    </form>
+</header>
+<div id="content">
+{% block content %}
+{% endblock %}
+</div><!-- // content -->
+</div><!-- // wrapper -->
+</body>
+</html>
