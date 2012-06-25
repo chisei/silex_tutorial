@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../vendor/autoload.php'; 
 
-require_once __DIR__.'/../providers/MemberServiceProvider.php';
+use SilexTutor\Provider;
 
 $app = new Silex\Application(); 
 
@@ -57,8 +57,6 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
 
-$app->register(new SilexTutorial\Provider\MemberServiceProvider(), array(
-    'member.class_path' => __DIR__.'/../services',
-));
+$app->register(new SilexTutorial\Provider\MemberServiceProvider());
 
 $app->run(); 
