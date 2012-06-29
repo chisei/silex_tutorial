@@ -12,7 +12,9 @@
     "require":{
         "silex/silex": "dev-master",
         "twig/twig": "1.8.3",
-        "pear-phpunit/PHPUnit": "*"
+        "pear-phpunit/PHPUnit": "*",
+        "doctrine/dbal": "2.2.*",
+        "doctrine/common": "2.2.*"
     },
     "autoload": {
         "psr-0": { "SilexTutorial": "src/"}

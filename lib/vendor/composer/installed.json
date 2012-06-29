@@ -28,7 +28,7 @@
         "name": "pear-phpunit/Text_Template",
         "version": "1.1.1",
         "version_normalized": "1.1.1.0",
-        "time": "2011-10-30 12:58:37",
+        "time": "2011-10-29 09:58:37",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/Text_Template-1.1.1.tgz",
@@ -59,7 +59,7 @@
         "name": "pear-phpunit/PHPUnit_MockObject",
         "version": "1.1.1",
         "version_normalized": "1.1.1.0",
-        "time": "2012-01-17 20:32:58",
+        "time": "2012-01-16 17:32:58",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHPUnit_MockObject-1.1.1.tgz",
@@ -95,7 +95,7 @@
         "name": "pear-phpunit/PHP_Timer",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
-        "time": "2011-09-06 15:38:14",
+        "time": "2011-09-05 12:38:14",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHP_Timer-1.0.2.tgz",
@@ -126,7 +126,7 @@
         "name": "pear-phpunit/PHP_TokenStream",
         "version": "1.1.3",
         "version_normalized": "1.1.3.0",
-        "time": "2012-02-14 23:20:16",
+        "time": "2012-02-13 20:20:16",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHP_TokenStream-1.1.3.tgz",
@@ -157,7 +157,7 @@
         "name": "pear-phpunit/File_Iterator",
         "version": "1.3.1",
         "version_normalized": "1.3.1.0",
-        "time": "2012-01-10 01:55:06",
+        "time": "2012-01-08 22:55:06",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/File_Iterator-1.3.1.tgz",
@@ -187,7 +187,7 @@
         "name": "pear-phpunit/PHP_CodeCoverage",
         "version": "1.1.2",
         "version_normalized": "1.1.2.0",
-        "time": "2012-02-22 16:35:02",
+        "time": "2012-02-21 13:35:02",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHP_CodeCoverage-1.1.2.tgz",
@@ -226,7 +226,7 @@
         "name": "pear-phpunit/PHPUnit",
         "version": "3.6.11",
         "version_normalized": "3.6.11.0",
-        "time": "2012-05-30 11:58:12",
+        "time": "2012-05-29 08:58:12",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHPUnit-3.6.11.tgz",
@@ -272,7 +272,7 @@
         "name": "twig/twig",
         "version": "v1.8.3",
         "version_normalized": "1.8.3.0",
-        "time": "2012-06-17 09:48:16",
+        "time": "2012-06-16 06:48:16",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Twig.git",
@@ -326,7 +326,7 @@
         "name": "pimple/pimple",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-06-21 04:34:38",
+        "time": "2012-06-20 01:34:38",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Pimple.git",
@@ -376,7 +376,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/EventDispatcher",
-        "time": "2012-05-26 07:48:33",
+        "time": "2012-05-25 04:48:33",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/EventDispatcher",
@@ -435,7 +435,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Routing",
-        "time": "2012-06-25 11:50:03",
+        "time": "2012-06-24 08:50:03",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Routing",
@@ -498,16 +498,16 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/HttpFoundation",
-        "time": "2012-06-25 20:29:10",
+        "time": "2012-06-28 13:35:09",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpFoundation",
-            "reference": "eede6abb9b49fa6632f9776c857c703d8d8268e0"
+            "reference": "e14cccb290443379bfd14f7c48901e07d076013e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/HttpFoundation/zipball/eede6abb9b49fa6632f9776c857c703d8d8268e0",
-            "reference": "eede6abb9b49fa6632f9776c857c703d8d8268e0",
+            "url": "https://github.com/symfony/HttpFoundation/zipball/e14cccb290443379bfd14f7c48901e07d076013e",
+            "reference": "e14cccb290443379bfd14f7c48901e07d076013e",
             "shasum": ""
         },
         "require": {
@@ -551,16 +551,16 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/HttpKernel",
-        "time": "2012-06-25 20:04:54",
+        "time": "2012-06-28 21:31:02",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpKernel",
-            "reference": "37338444a653dfd26e4c6c9abe535318de0957e6"
+            "reference": "6d69fa82c21aa752e7d6aa7c35b70923fd55f450"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/HttpKernel/zipball/37338444a653dfd26e4c6c9abe535318de0957e6",
-            "reference": "37338444a653dfd26e4c6c9abe535318de0957e6",
+            "url": "https://github.com/symfony/HttpKernel/zipball/6d69fa82c21aa752e7d6aa7c35b70923fd55f450",
+            "reference": "6d69fa82c21aa752e7d6aa7c35b70923fd55f450",
             "shasum": ""
         },
         "require": {
@@ -622,16 +622,16 @@
         "name": "silex/silex",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-06-26 12:03:58",
+        "time": "2012-06-28 21:45:24",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Silex.git",
-            "reference": "c1711986850d828c71dc60b050275eb80004fc7a"
+            "reference": "4b6c46eeb658673d4fcdd62faa6cf3b98cd53087"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/fabpot/Silex/zipball/c1711986850d828c71dc60b050275eb80004fc7a",
-            "reference": "c1711986850d828c71dc60b050275eb80004fc7a",
+            "url": "https://github.com/fabpot/Silex/zipball/4b6c46eeb658673d4fcdd62faa6cf3b98cd53087",
+            "reference": "4b6c46eeb658673d4fcdd62faa6cf3b98cd53087",
             "shasum": ""
         },
         "require": {
@@ -697,6 +697,142 @@
         "autoload": {
             "psr-0": {
                 "Silex": "src/"
+            }
+        }
+    },
+    {
+        "name": "doctrine/common",
+        "version": "2.2.2",
+        "version_normalized": "2.2.2.0",
+        "time": "2012-04-13 07:46:44",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/common",
+            "reference": "2.2.2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/doctrine/common/zipball/2.2.2",
+            "reference": "2.2.2",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "type": "library",
+        "installation-source": "dist",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/",
+                "role": null
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com",
+                "homepage": "https://github.com/schmittjoh",
+                "role": null
+            }
+        ],
+        "description": "Common Library for Doctrine projects",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "collections",
+            "spl",
+            "eventmanager",
+            "annotations",
+            "persistence"
+        ],
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Common": "lib/"
+            }
+        }
+    },
+    {
+        "name": "doctrine/dbal",
+        "version": "2.2.x-dev",
+        "version_normalized": "2.2.9999999.9999999-dev",
+        "time": "2012-05-27 10:08:36",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/dbal",
+            "reference": "8cc129aa64a8de6447056bce20f0a274fe2a340b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/doctrine/dbal/zipball/8cc129aa64a8de6447056bce20f0a274fe2a340b",
+            "reference": "8cc129aa64a8de6447056bce20f0a274fe2a340b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.2",
+            "doctrine/common": ">=2.2.0,<=2.2.99"
+        },
+        "type": "library",
+        "installation-source": "source",
+        "license": [
+            "LGPL"
+        ],
+        "authors": [
+            {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/",
+                "role": null
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de",
+                "homepage": null,
+                "role": null
+            }
+        ],
+        "description": "Database Abstraction Layer",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "database",
+            "persistence",
+            "dbal",
+            "queryobject"
+        ],
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\DBAL": "lib/"
             }
         }
     }

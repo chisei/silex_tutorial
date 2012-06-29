@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content%}
+<h2>会員編集</h2>
+<form action="/member/edit" method="post" class="well">
+    <label>メールドレス</label>
+    <div class="control-group">
+        <input type="text" name="member[email]" value="{{ member.email }}" />
+    </div>
+    <label>パスワード</label>
+    <div class="control-group">
+        <input type="password" name="member[password]" value="" />
+    </div>
+    <button type="submit" class="btn">更新</button>
+</form>
+{% endblock %}

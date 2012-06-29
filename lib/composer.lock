@@ -1,6 +1,15 @@
 {
-    "hash": "9254dca01eef5e09cb70dbdf2d2f443b",
+    "hash": "87f7bd8ba7d0441cf1e42910af4f1855",
     "packages": [
+        {
+            "package": "doctrine/common",
+            "version": "2.2.2"
+        },
+        {
+            "package": "doctrine/dbal",
+            "version": "2.2.x-dev",
+            "source-reference": "8cc129aa64a8de6447056bce20f0a274fe2a340b"
+        },
         {
             "package": "pear-phpunit/File_Iterator",
             "version": "1.3.1"
@@ -47,19 +56,7 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "silex/silex",
-            "version": "dev-master",
-            "source-reference": "c1711986850d828c71dc60b050275eb80004fc7a"
-        },
-        {
-            "package": "symfony/event-dispatcher",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "4b6c46eeb658673d4fcdd62faa6cf3b98cd53087"
         },
         {
             "package": "symfony/event-dispatcher",
@@ -81,13 +78,7 @@
         {
             "package": "symfony/http-foundation",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/http-foundation",
-            "version": "dev-master",
-            "source-reference": "eede6abb9b49fa6632f9776c857c703d8d8268e0"
+            "source-reference": "e14cccb290443379bfd14f7c48901e07d076013e"
         },
         {
             "package": "symfony/http-kernel",
@@ -98,19 +89,7 @@
         {
             "package": "symfony/http-kernel",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/http-kernel",
-            "version": "dev-master",
-            "source-reference": "37338444a653dfd26e4c6c9abe535318de0957e6"
-        },
-        {
-            "package": "symfony/routing",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "6d69fa82c21aa752e7d6aa7c35b70923fd55f450"
         },
         {
             "package": "symfony/routing",
