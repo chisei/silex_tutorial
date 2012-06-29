@@ -28,7 +28,7 @@
         "name": "pear-phpunit/Text_Template",
         "version": "1.1.1",
         "version_normalized": "1.1.1.0",
-        "time": "2011-10-29 09:58:37",
+        "time": "2011-10-29 00:58:37",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/Text_Template-1.1.1.tgz",
@@ -59,7 +59,7 @@
         "name": "pear-phpunit/PHPUnit_MockObject",
         "version": "1.1.1",
         "version_normalized": "1.1.1.0",
-        "time": "2012-01-16 17:32:58",
+        "time": "2012-01-16 08:32:58",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHPUnit_MockObject-1.1.1.tgz",
@@ -95,7 +95,7 @@
         "name": "pear-phpunit/PHP_Timer",
         "version": "1.0.2",
         "version_normalized": "1.0.2.0",
-        "time": "2011-09-05 12:38:14",
+        "time": "2011-09-05 03:38:14",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHP_Timer-1.0.2.tgz",
@@ -126,7 +126,7 @@
         "name": "pear-phpunit/PHP_TokenStream",
         "version": "1.1.3",
         "version_normalized": "1.1.3.0",
-        "time": "2012-02-13 20:20:16",
+        "time": "2012-02-13 11:20:16",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHP_TokenStream-1.1.3.tgz",
@@ -157,7 +157,7 @@
         "name": "pear-phpunit/File_Iterator",
         "version": "1.3.1",
         "version_normalized": "1.3.1.0",
-        "time": "2012-01-08 22:55:06",
+        "time": "2012-01-08 13:55:06",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/File_Iterator-1.3.1.tgz",
@@ -187,7 +187,7 @@
         "name": "pear-phpunit/PHP_CodeCoverage",
         "version": "1.1.2",
         "version_normalized": "1.1.2.0",
-        "time": "2012-02-21 13:35:02",
+        "time": "2012-02-21 04:35:02",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHP_CodeCoverage-1.1.2.tgz",
@@ -226,7 +226,7 @@
         "name": "pear-phpunit/PHPUnit",
         "version": "3.6.11",
         "version_normalized": "3.6.11.0",
-        "time": "2012-05-29 08:58:12",
+        "time": "2012-05-28 23:58:12",
         "dist": {
             "type": "pear",
             "url": "http://pear.phpunit.de/get/PHPUnit-3.6.11.tgz",
@@ -272,7 +272,7 @@
         "name": "twig/twig",
         "version": "v1.8.3",
         "version_normalized": "1.8.3.0",
-        "time": "2012-06-16 06:48:16",
+        "time": "2012-06-15 21:48:16",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Twig.git",
@@ -326,7 +326,7 @@
         "name": "pimple/pimple",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-06-20 01:34:38",
+        "time": "2012-06-19 16:34:38",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Pimple.git",
@@ -376,7 +376,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/EventDispatcher",
-        "time": "2012-05-25 04:48:33",
+        "time": "2012-05-24 19:48:33",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/EventDispatcher",
@@ -435,7 +435,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/Routing",
-        "time": "2012-06-24 08:50:03",
+        "time": "2012-06-23 23:50:03",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Routing",
@@ -498,7 +498,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/HttpFoundation",
-        "time": "2012-06-28 13:35:09",
+        "time": "2012-06-28 04:35:09",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpFoundation",
@@ -551,7 +551,7 @@
         "version": "dev-master",
         "version_normalized": "9999999-dev",
         "target-dir": "Symfony/Component/HttpKernel",
-        "time": "2012-06-28 21:31:02",
+        "time": "2012-06-28 12:31:02",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/HttpKernel",
@@ -622,7 +622,7 @@
         "name": "silex/silex",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
-        "time": "2012-06-28 21:45:24",
+        "time": "2012-06-28 12:45:24",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Silex.git",
@@ -704,7 +704,7 @@
         "name": "doctrine/common",
         "version": "2.2.2",
         "version_normalized": "2.2.2.0",
-        "time": "2012-04-13 07:46:44",
+        "time": "2012-04-12 22:46:44",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/common",
@@ -775,7 +775,7 @@
         "name": "doctrine/dbal",
         "version": "2.2.x-dev",
         "version_normalized": "2.2.9999999.9999999-dev",
-        "time": "2012-05-27 10:08:36",
+        "time": "2012-05-27 01:08:36",
         "source": {
             "type": "git",
             "url": "https://github.com/doctrine/dbal",
@@ -833,6 +833,181 @@
         "autoload": {
             "psr-0": {
                 "Doctrine\\DBAL": "lib/"
+            }
+        }
+    },
+    {
+        "name": "symfony/options-resolver",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Symfony/Component/OptionsResolver",
+        "time": "2012-06-12 12:23:19",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/OptionsResolver",
+            "reference": "915b39d1e0ad1c1f2526b93a16a10e5e504aefad"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/OptionsResolver/zipball/915b39d1e0ad1c1f2526b93a16a10e5e504aefad",
+            "reference": "915b39d1e0ad1c1f2526b93a16a10e5e504aefad",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Symfony Community",
+                "email": null,
+                "homepage": "http://symfony.com/contributors",
+                "role": null
+            }
+        ],
+        "description": "Symfony OptionsResolver Component",
+        "homepage": "http://symfony.com",
+        "keywords": [
+            "configuration",
+            "config",
+            "options"
+        ],
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\OptionsResolver": ""
+            }
+        }
+    },
+    {
+        "name": "symfony/locale",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Symfony/Component/Locale",
+        "time": "2012-05-31 03:04:03",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Locale",
+            "reference": "v2.1.0-BETA1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/Locale/zipball/v2.1.0-BETA1",
+            "reference": "v2.1.0-BETA1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-intl": ">=5.3.3"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Symfony Community",
+                "email": null,
+                "homepage": "http://symfony.com/contributors",
+                "role": null
+            }
+        ],
+        "description": "Symfony Locale Component",
+        "homepage": "http://symfony.com",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Locale": ""
+            }
+        }
+    },
+    {
+        "name": "symfony/form",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "target-dir": "Symfony/Component/Form",
+        "time": "2012-06-28 14:10:42",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Form",
+            "reference": "afe2e7afb94905ae3f3bfbc1ec88c094f823844e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/symfony/Form/zipball/afe2e7afb94905ae3f3bfbc1ec88c094f823844e",
+            "reference": "afe2e7afb94905ae3f3bfbc1ec88c094f823844e",
+            "shasum": ""
+        },
+        "require": {
+            "symfony/event-dispatcher": "2.1.*",
+            "symfony/locale": "2.1.*",
+            "php": ">=5.3.3",
+            "symfony/options-resolver": "2.1.*"
+        },
+        "require-dev": {
+            "symfony/validator": "2.1.*",
+            "symfony/http-foundation": "2.1.*"
+        },
+        "suggest": {
+            "symfony/validator": "dev-master",
+            "symfony/http-foundation": "dev-master"
+        },
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": null,
+                "role": null
+            },
+            {
+                "name": "Symfony Community",
+                "email": null,
+                "homepage": "http://symfony.com/contributors",
+                "role": null
+            }
+        ],
+        "description": "Symfony Form Component",
+        "homepage": "http://symfony.com",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Form": ""
             }
         }
     }

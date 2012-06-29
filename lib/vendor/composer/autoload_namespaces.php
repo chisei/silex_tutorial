@@ -8,8 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'Twig_' => $vendorDir . '/twig/twig/lib/',
     'Symfony\\Component\\Routing' => $vendorDir . '/symfony/routing/',
+    'Symfony\\Component\\OptionsResolver' => $vendorDir . '/symfony/options-resolver/',
+    'Symfony\\Component\\Locale' => $vendorDir . '/symfony/locale/',
     'Symfony\\Component\\HttpKernel' => $vendorDir . '/symfony/http-kernel/',
     'Symfony\\Component\\HttpFoundation' => $vendorDir . '/symfony/http-foundation/',
+    'Symfony\\Component\\Form' => $vendorDir . '/symfony/form/',
     'Symfony\\Component\\EventDispatcher' => $vendorDir . '/symfony/event-dispatcher/',
     'SilexTutorial' => $baseDir . '/src/',
     'Silex' => $vendorDir . '/silex/silex/src/',
