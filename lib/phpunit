@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__.'/vendor/autoload.php';
+
+$paths = get_include_path();
+
+foreach (glob(__DIR__.'/vendor/pear-phpunit/*') as $path) {
+    $paths .= PATH_SEPARATOR . $path;
+}
+
+set_include_path($paths);
+
+require_once 'PHPUnit/Autoload.php';
+
+PHPUnit_TextUI_Command::main();

@@ -142,7 +142,7 @@ class Member
     {
         $sql = "SELECT * FROM member WHERE id = ?";
 
-        if($this->data)
+        if(!$this->data)
         {
             $this->data = $this->db->fetchAssoc($sql, array((int) $id)) ?: array();
         }

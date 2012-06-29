@@ -8,7 +8,6 @@ use Silex\ControllerCollection;
 
 class MemberControllerProvider implements ControllerProviderInterface
 {
-
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
