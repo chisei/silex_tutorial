@@ -5,18 +5,36 @@ namespace SilexTutorial\Service;
 /**
  * Member class
  */
-class Member
+class Member extends \ArrayObject
 {
 
     const STRETCHCOUNT = 1000;
 
     protected $db;
 
-    protected $data = array();
+    private $data = array();
 
     public function __construct($db)
     {
         $this->db = $db;
+    }
+
+    public function offsetGet($key)
+    {
+        return $this->data[$key];
+    }
+
+    public function offsetSet($key, $value)
+    {
+        $this->data[$key] = $value;
+    }
+
+    public function set($data)
+    {
+        foreach($data as $key => $value)
+        {
+            $this->offsetSet($key, $value);
+        }
     }
 
     /**
@@ -29,21 +47,14 @@ class Member
     {
         $member = $this->getByEmail($email);
 
-        if(isset($member['password']))
+        if($member['password'] === $this->passwordHash($member['id'], $password))
         {
-            if($member['password'] === $this->passwordHash($member['id'], $password))
-            {
-                return true;
-            }
+            return true;
         }
 
         return false;
     }
 
-    public function get()
-    {
-        return $this->data;
-    }
 
     /**
      * 登録
@@ -103,22 +114,28 @@ class Member
 
         try
         {
-            if(!isset($data['email']))
+            if(!isset($this->data['id']))
             {
                 return false;
             }
 
-            $member = $this->getByEmail($data['email']);
+            if(isset($data['password']))
+            {
+                $data['password'] = $this->passwordHash($this->data['id'], $data['password']);
+            }
 
-            $sql = "UPDATE member SET
-                email = ?,
-                password = ?
-                WHERE email = ?";
+            $sql = "UPDATE member SET ";
+
+            foreach($data as $columnName => $value)
+            {
+                $sql .= " `$columnName` = ? ";
+            }
+            $sql .= " WHERE id = ?";
 
             $affectedRowsCount = $this->db->update(
                 'member',
-                array('email' => $data['email'], 'password' => $this->passwordHash($member['id'], $data['password'])),
-                array('email' => $data['email'])
+                $data,
+                array('id' => $this->data['id'])
             );
             
         }
@@ -129,6 +146,9 @@ class Member
         }
 
         $this->db->commit();
+
+        // データ入れ替え
+        $this->set($data);
 
         return $affectedRowsCount ? true : false;
     }
@@ -153,7 +173,7 @@ class Member
     /**
      * emailから取得
      * @param   string  $email
-     * @return  array
+     * @return  $this
      */
     public function getByEmail($email)
     {
@@ -164,7 +184,7 @@ class Member
             $this->data = $this->db->fetchAssoc($sql, array($email)) ?: array();
         }
 
-        return $this->data;
+        return $this;
     }
 
 
