@@ -123,6 +123,7 @@ class Twig_Extension_Core extends Twig_Extension
         $filters = array(
             // formatting filters
             'date'          => new Twig_Filter_Function('twig_date_format_filter', array('needs_environment' => true)),
+            'date_modify'   => new Twig_Filter_Function('twig_date_modify_filter', array('needs_environment' => true)),
             'format'        => new Twig_Filter_Function('sprintf'),
             'replace'       => new Twig_Filter_Function('strtr'),
             'number_format' => new Twig_Filter_Function('twig_number_format_filter', array('needs_environment' => true)),
@@ -313,8 +314,8 @@ function twig_cycle($values, $i)
  * - a random character from a string
  * - a random integer between 0 and the integer parameter
  *
- * @param Twig_Environment             $env    A Twig_Environment instance
- * @param Traversable|array|int|string $values The values to pick a random item from
+ * @param Twig_Environment                 $env    A Twig_Environment instance
+ * @param Traversable|array|integer|string $values The values to pick a random item from
  *
  * @throws Twig_Error_Runtime When $values is an empty array (does not apply to an empty string which is returned as is).
  *
@@ -378,7 +379,7 @@ function twig_random(Twig_Environment $env, $values = null)
  * @param string                       $format   A format
  * @param DateTimeZone|string          $timezone A timezone
  *
- * @return string The formatter date
+ * @return string The formatted date
  */
 function twig_date_format_filter(Twig_Environment $env, $date, $format = null, $timezone = null)
 {
@@ -397,6 +398,32 @@ function twig_date_format_filter(Twig_Environment $env, $date, $format = null, $
     }
 
     return twig_date_converter($env, $date, $timezone)->format($format);
+}
+
+/**
+ * Returns a new date object modified
+ *
+ * <pre>
+ *   {{ post.published_at|modify("-1day")|date("m/d/Y") }}
+ * </pre>
+ *
+ * @param Twig_Environment  $env      A Twig_Environment instance
+ * @param DateTime|string   $date     A date
+ * @param string            $modifier A modifier string
+ *
+ * @return DateTime A new date object
+ */
+function twig_date_modify_filter(Twig_Environment $env, $date, $modifier)
+{
+    if ($date instanceof DateTime) {
+        $date = clone $date;
+    } else {
+        $date = twig_date_converter($env, $date);
+    }
+
+    $date->modify($modifier);
+
+    return $date;
 }
 
 /**
@@ -453,7 +480,7 @@ function twig_date_converter(Twig_Environment $env, $date = null, $timezone = nu
  *
  * @param Twig_Environment    $env          A Twig_Environment instance
  * @param mixed               $number       A float/int/string of the number to format
- * @param int                 $decimal      The number of decimal points to display.
+ * @param integer             $decimal      The number of decimal points to display.
  * @param string              $decimalPoint The character(s) to use for the decimal point.
  * @param string              $thousandSep  The character(s) to use for the thousands separator.
  *
@@ -718,8 +745,10 @@ function twig_sort_filter($array)
 /* used internally */
 function twig_in_filter($value, $compare)
 {
+    $strict = is_object($value);
+
     if (is_array($compare)) {
-        return in_array($value, $compare);
+        return in_array($value, $compare, $strict);
     } elseif (is_string($compare)) {
         if (!strlen((string) $value)) {
             return empty($compare);
@@ -727,7 +756,7 @@ function twig_in_filter($value, $compare)
 
         return false !== strpos($compare, (string) $value);
     } elseif (is_object($compare) && $compare instanceof Traversable) {
-        return in_array($value, iterator_to_array($compare, false));
+        return in_array($value, iterator_to_array($compare, false), $strict);
     }
 
     return false;
@@ -766,9 +795,45 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
                 $string = twig_convert_encoding($string, 'UTF-8', $charset);
             }
 
-            if (null === $string = preg_replace_callback('#[^\p{L}\p{N} ]#u', '_twig_escape_js_callback', $string)) {
+            if (0 == strlen($string) ? false : (1 == preg_match('/^./su', $string) ? false : true)) {
                 throw new Twig_Error_Runtime('The string to escape is not a valid UTF-8 string.');
             }
+
+            $string = preg_replace_callback('#[^a-zA-Z0-9,\._]#Su', '_twig_escape_js_callback', $string);
+
+            if ('UTF-8' != $charset) {
+                $string = twig_convert_encoding($string, $charset, 'UTF-8');
+            }
+
+            return $string;
+
+        case 'css':
+            if ('UTF-8' != $charset) {
+                $string = twig_convert_encoding($string, 'UTF-8', $charset);
+            }
+
+            if (0 == strlen($string) ? false : (1 == preg_match('/^./su', $string) ? false : true)) {
+                throw new Twig_Error_Runtime('The string to escape is not a valid UTF-8 string.');
+            }
+
+            $string = preg_replace_callback('#[^a-zA-Z0-9]#Su', '_twig_escape_css_callback', $string);
+
+            if ('UTF-8' != $charset) {
+                $string = twig_convert_encoding($string, $charset, 'UTF-8');
+            }
+
+            return $string;
+
+        case 'html_attr':
+            if ('UTF-8' != $charset) {
+                $string = twig_convert_encoding($string, 'UTF-8', $charset);
+            }
+
+            if (0 == strlen($string) ? false : (1 == preg_match('/^./su', $string) ? false : true)) {
+                throw new Twig_Error_Runtime('The string to escape is not a valid UTF-8 string.');
+            }
+
+            $string = preg_replace_callback('#[^a-zA-Z0-9,\.\-_]#Su', '_twig_escape_html_attr_callback', $string);
 
             if ('UTF-8' != $charset) {
                 $string = twig_convert_encoding($string, $charset, 'UTF-8');
@@ -808,8 +873,15 @@ function twig_escape_filter(Twig_Environment $env, $string, $strategy = 'html', 
 
             return twig_convert_encoding($string, $charset, 'UTF-8');
 
+        case 'url':
+            if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+                return str_replace('%7E', '~', rawurlencode($string));
+            }
+
+            return rawurlencode($string);
+
         default:
-            throw new Twig_Error_Runtime(sprintf('Invalid escaping strategy "%s" (valid ones: html, js).', $strategy));
+            throw new Twig_Error_Runtime(sprintf('Invalid escaping strategy "%s" (valid ones: html, js, url, css, and html_attr).', $strategy));
     }
 }
 
@@ -850,13 +922,87 @@ function _twig_escape_js_callback($matches)
 
     // \xHH
     if (!isset($char[1])) {
-        return '\\x'.substr('00'.bin2hex($char), -2);
+        return '\\x'.strtoupper(substr('00'.bin2hex($char), -2));
     }
 
     // \uHHHH
     $char = twig_convert_encoding($char, 'UTF-16BE', 'UTF-8');
 
-    return '\\u'.substr('0000'.bin2hex($char), -4);
+    return '\\u'.strtoupper(substr('0000'.bin2hex($char), -4));
+}
+
+function _twig_escape_css_callback($matches)
+{
+    $char = $matches[0];
+
+    // \xHH
+    if (!isset($char[1])) {
+        $hex = ltrim(strtoupper(bin2hex($char)), '0');
+        if (0 === strlen($hex)) {
+            $hex = '0';
+        }
+        return '\\'.$hex.' ';
+    }
+
+    // \uHHHH
+    $char = twig_convert_encoding($char, 'UTF-16BE', 'UTF-8');
+
+    return '\\'.ltrim(strtoupper(bin2hex($char)), '0').' ';
+}
+
+/**
+ * This function is adapted from code coming from Zend Framework.
+ *
+ * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
+ * @license   http://framework.zend.com/license/new-bsd New BSD License
+ */
+function _twig_escape_html_attr_callback($matches)
+{
+    /*
+     * While HTML supports far more named entities, the lowest common denominator
+     * has become HTML5's XML Serialisation which is restricted to the those named
+     * entities that XML supports. Using HTML entities would result in this error:
+     *     XML Parsing Error: undefined entity
+     */
+    static $entityMap = array(
+        34 => 'quot', /* quotation mark */
+        38 => 'amp',  /* ampersand */
+        60 => 'lt',   /* less-than sign */
+        62 => 'gt',   /* greater-than sign */
+    );
+
+    $chr = $matches[0];
+    $ord = ord($chr);
+
+    /**
+     * The following replaces characters undefined in HTML with the
+     * hex entity for the Unicode replacement character.
+     */
+    if (($ord <= 0x1f && $chr != "\t" && $chr != "\n" && $chr != "\r") || ($ord >= 0x7f && $ord <= 0x9f)) {
+        return '&#xFFFD;';
+    }
+
+    /**
+     * Check if the current character to escape has a name entity we should
+     * replace it with while grabbing the hex value of the character.
+     */
+    if (strlen($chr) == 1) {
+        $hex = strtoupper(substr('00'.bin2hex($chr), -2));
+    } else {
+        $chr = twig_convert_encoding($chr, 'UTF-16BE', 'UTF-8');
+        $hex = strtoupper(substr('0000'.bin2hex($chr), -4));
+    }
+
+    $int = hexdec($hex);
+    if (array_key_exists($int, $entityMap)) {
+        return sprintf('&%s;', $entityMap[$int]);
+    }
+
+    /**
+     * Per OWASP recommendations, we'll use hex entities for any other
+     * characters where a named entity does not exist.
+     */
+    return sprintf('&#x%s;', $hex);
 }
 
 // add multibyte extensions if possible

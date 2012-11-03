@@ -15,6 +15,7 @@ return array(
     'Symfony\\Component\\HttpFoundation' => $vendorDir . '/symfony/http-foundation/',
     'Symfony\\Component\\Form' => $vendorDir . '/symfony/form/',
     'Symfony\\Component\\EventDispatcher' => $vendorDir . '/symfony/event-dispatcher/',
+    'Symfony\\Bridge\\Twig' => $vendorDir . '/symfony/twig-bridge/',
     'SilexTutorial' => $baseDir . '/src/',
     'Silex' => $vendorDir . '/silex/silex/src/',
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs',

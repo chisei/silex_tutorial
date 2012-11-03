@@ -1,3 +1,22 @@
+* 1.9.2 (2012-08-25)
+
+ * fixed the in operator for objects that contain circular references
+ * fixed the C extension when accessing a public property of an object implementing the \ArrayAccess interface
+
+* 1.9.1 (2012-07-22)
+
+ * optimized macro calls when auto-escaping is on
+ * fixed wrong parent class for Twig_Function_Node
+ * made Twig_Loader_Chain more explicit about problems
+
+* 1.9.0 (2012-07-13)
+
+ * made the parsing independent of the template loaders
+ * fixed exception trace when an error occurs when rendering a child template
+ * added escaping strategies for CSS, URL, and HTML attributes
+ * fixed nested embed tag calls
+ * added the date_modify filter
+
 * 1.8.3 (2012-06-17)
 
  * fixed paths in the filesystem loader when passing a path that ends with a slash or a backslash

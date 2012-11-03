@@ -17,8 +17,6 @@
 #endif
 
 #include "php.h"
-#include "php_ini.h"
-#include "ext/standard/info.h"
 #include "php_twig.h"
 #include "ext/standard/php_string.h"
 #include "ext/standard/php_smart_str.h"
@@ -29,6 +27,16 @@
 
 #ifndef Z_ADDREF_P
 #define Z_ADDREF_P(pz)                (pz)->refcount++
+#endif
+
+#if PHP_VERSION_ID >= 50300
+	#define APPLY_TSRMLS_DC TSRMLS_DC
+	#define APPLY_TSRMLS_CC TSRMLS_CC
+	#define APPLY_TSRMLS_FETCH()
+#else
+	#define APPLY_TSRMLS_DC
+	#define APPLY_TSRMLS_CC
+	#define APPLY_TSRMLS_FETCH() TSRMLS_FETCH()
 #endif
 
 ZEND_BEGIN_ARG_INFO_EX(twig_template_get_attribute_args, ZEND_SEND_BY_VAL, ZEND_RETURN_VALUE, 6)
@@ -47,19 +55,15 @@ zend_function_entry twig_functions[] = {
 
 
 zend_module_entry twig_module_entry = {
-#if ZEND_MODULE_API_NO >= 20010901
 	STANDARD_MODULE_HEADER,
-#endif
 	"twig",
 	twig_functions,
-	PHP_MINIT(twig),
-	PHP_MSHUTDOWN(twig),
-	PHP_RINIT(twig),
-	PHP_RSHUTDOWN(twig),
-	PHP_MINFO(twig),
-#if ZEND_MODULE_API_NO >= 20010901
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
 	PHP_TWIG_VERSION,
-#endif
 	STANDARD_MODULE_PROPERTIES
 };
 
@@ -67,50 +71,6 @@ zend_module_entry twig_module_entry = {
 #ifdef COMPILE_DL_TWIG
 ZEND_GET_MODULE(twig)
 #endif
-
-PHP_INI_BEGIN()
-PHP_INI_END()
-
-PHP_MINIT_FUNCTION(twig)
-{
-	REGISTER_INI_ENTRIES();
-
-	return SUCCESS;
-}
-
-
-PHP_MSHUTDOWN_FUNCTION(twig)
-{
-	UNREGISTER_INI_ENTRIES();
-
-	return SUCCESS;
-}
-
-
-
-PHP_RINIT_FUNCTION(twig)
-{
-	return SUCCESS;
-}
-
-
-
-PHP_RSHUTDOWN_FUNCTION(twig)
-{
-	return SUCCESS;
-}
-
-
-PHP_MINFO_FUNCTION(twig)
-{
-	php_info_print_table_start();
-	php_info_print_table_header(2, "Twig support", "enabled");
-	php_info_print_table_row(2, "Version", PHP_TWIG_VERSION);
-	php_info_print_table_end();
-
-	DISPLAY_INI_ENTRIES();
-
-}
 
 int TWIG_ARRAY_KEY_EXISTS(zval *array, char* key, int key_len)
 {
@@ -328,21 +288,7 @@ zval *TWIG_GET_ARRAY_ELEMENT(zval *class, char *prop_name, int prop_name_length 
 
 zval *TWIG_PROPERTY(zval *object, zval *propname TSRMLS_DC)
 {
-	char *prot_name;
-	int prot_name_length;
 	zval *tmp = NULL;
-
-	tmp = TWIG_GET_ARRAY_ELEMENT(object, Z_STRVAL_P(propname), Z_STRLEN_P(propname) TSRMLS_CC);
-	if (tmp) {
-		return tmp;
-	}
-
-	zend_mangle_property_name(&prot_name, &prot_name_length, "*", 1, Z_STRVAL_P(propname), Z_STRLEN_P(propname), 0);
-	tmp = TWIG_GET_ARRAY_ELEMENT(object, prot_name, prot_name_length TSRMLS_CC);
-	efree(prot_name);
-	if (tmp) {
-		return tmp;
-	}
 
 	if (Z_OBJ_HT_P(object)->read_property) {
 #if PHP_VERSION_ID >= 50400
@@ -551,8 +497,9 @@ void TWIG_NEW(zval *object, char *class, zval *arg0, zval *arg1 TSRMLS_DC)
 	TWIG_CALL_ZZ(object, "__construct", arg0, arg1 TSRMLS_CC);
 }
 
-static int twig_add_array_key_to_string(void *pDest TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
+static int twig_add_array_key_to_string(void *pDest APPLY_TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
 {
+	APPLY_TSRMLS_FETCH();
 	smart_str *buf;
 	char *joiner;
 
@@ -584,7 +531,7 @@ char *TWIG_IMPLODE_ARRAY_KEYS(char *joiner, zval *array TSRMLS_DC)
 	smart_str collector = { 0, 0, 0 };
 
 	smart_str_appendl(&collector, "", 0);
-	zend_hash_apply_with_arguments(HASH_OF(array) TSRMLS_CC, twig_add_array_key_to_string, 2, &collector, joiner);
+	zend_hash_apply_with_arguments(HASH_OF(array) APPLY_TSRMLS_CC, twig_add_array_key_to_string, 2, &collector, joiner);
 	smart_str_0(&collector);
 
 	return collector.c;
@@ -620,8 +567,9 @@ char *TWIG_GET_CLASS_NAME(zval *object TSRMLS_DC)
 	return class_name;
 }
 
-static int twig_add_method_to_class(void *pDest TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
+static int twig_add_method_to_class(void *pDest APPLY_TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
 {
+	APPLY_TSRMLS_FETCH();
 	zval *retval;
 	char *item;
 	size_t item_len;
@@ -642,8 +590,9 @@ static int twig_add_method_to_class(void *pDest TSRMLS_DC, int num_args, va_list
 	return 0;
 }
 
-static int twig_add_property_to_class(void *pDest TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
+static int twig_add_property_to_class(void *pDest APPLY_TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
 {
+	APPLY_TSRMLS_FETCH();
 	zend_class_entry *ce;
 	zval *retval;
 	char *class_name, *prop_name;
@@ -664,8 +613,9 @@ static int twig_add_property_to_class(void *pDest TSRMLS_DC, int num_args, va_li
 }
 
 /* {{{ _adddynproperty */
-static int twig_add_dyn_property_to_class(void *pDest TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
+static int twig_add_dyn_property_to_class(void *pDest APPLY_TSRMLS_DC, int num_args, va_list args, zend_hash_key *hash_key)
 {
+	APPLY_TSRMLS_FETCH();
 	zend_class_entry *ce = *va_arg(args, zend_class_entry**);
 	zval *retval = va_arg(args, zval*), member;
 	char *class_name, *prop_name;
@@ -696,12 +646,12 @@ static void twig_add_class_to_cache(zval *cache, zval *object, char *class_name 
 	array_init(class_methods);
 	array_init(class_properties);
 	// add all methods to self::cache[$class]['methods']
-	zend_hash_apply_with_arguments(&class_ce->function_table TSRMLS_CC, twig_add_method_to_class, 1, class_methods);
-	zend_hash_apply_with_arguments(&class_ce->properties_info TSRMLS_CC, twig_add_property_to_class, 2, &class_ce, class_properties);
+	zend_hash_apply_with_arguments(&class_ce->function_table APPLY_TSRMLS_CC, twig_add_method_to_class, 1, class_methods);
+	zend_hash_apply_with_arguments(&class_ce->properties_info APPLY_TSRMLS_CC, twig_add_property_to_class, 2, &class_ce, class_properties);
 
 	if (object && Z_OBJ_HT_P(object)->get_properties) {
 		HashTable *properties = Z_OBJ_HT_P(object)->get_properties(object TSRMLS_CC);
-		zend_hash_apply_with_arguments(properties TSRMLS_CC, twig_add_dyn_property_to_class, 2, &class_ce, class_properties);
+		zend_hash_apply_with_arguments(properties APPLY_TSRMLS_CC, twig_add_dyn_property_to_class, 2, &class_ce, class_properties);
 	}
 	add_assoc_zval(class_info, "methods", class_methods);
 	add_assoc_zval(class_info, "properties", class_properties);
@@ -734,6 +684,16 @@ PHP_FUNCTION(twig_template_get_attributes)
 	INIT_PZVAL(&zitem);
 	ZVAL_STRINGL(&zitem, item, item_len, 0);
 
+    switch (is_numeric_string(item, item_len, &Z_LVAL(zitem), &Z_DVAL(zitem), 0)) {
+    case IS_LONG:
+        Z_TYPE(zitem) = IS_LONG;
+        break;
+    case IS_DOUBLE:
+        Z_TYPE(zitem) = IS_DOUBLE;
+        convert_to_long(&zitem);
+        break;
+    }
+
 	if (!type) {
 		type = "any";
 	}
@@ -763,6 +723,9 @@ PHP_FUNCTION(twig_template_get_attributes)
 			}
 
 			ret = TWIG_GET_ARRAY_ELEMENT(object, item, item_len TSRMLS_CC);
+			if (!ret) {
+				ret = &EG(uninitialized_zval);
+			}
 			RETVAL_ZVAL(ret, 1, 0);
 			if (free_ret) {
 				zval_ptr_dtor(&ret);
