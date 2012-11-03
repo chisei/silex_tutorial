@@ -1,18 +1,8 @@
 {
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "http://pear.symfony-project.com"
-        },
-        {
-            "type": "pear",
-            "url": "http://pear.phpunit.de"
-        }
-    ],
     "require":{
         "silex/silex": "dev-master",
         "twig/twig": "1.8.3",
-        "pear-phpunit/PHPUnit": "*",
+        "phpunit/phpunit": "3.7.*",
         "doctrine/dbal": "2.2.*",
         "doctrine/common": "2.2.*",
         "symfony/form": "2.1.*"

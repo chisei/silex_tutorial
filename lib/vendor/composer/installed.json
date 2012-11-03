@@ -1,278 +1,431 @@
 [
     {
-        "name": "pear-symfony/YAML",
-        "version": "1.0.6",
-        "version_normalized": "1.0.6.0",
+        "name": "doctrine/common",
+        "version": "2.2.3",
+        "version_normalized": "2.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/doctrine/common",
+            "reference": "2.2.3"
+        },
         "dist": {
-            "type": "pear",
-            "url": "http://pear.symfony-project.com/get/YAML-1.0.6.tgz",
-            "reference": null,
-            "shasum": null
+            "type": "zip",
+            "url": "https://github.com/doctrine/common/zipball/2.2.3",
+            "reference": "2.2.3",
+            "shasum": ""
         },
         "require": {
-            "php": ">=5.2.4"
+            "php": ">=5.3.2"
         },
+        "time": "2012-08-29 01:04:14",
         "type": "library",
         "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\Common": "lib/"
+            }
+        },
         "license": [
-            "MIT license"
+            "LGPL"
         ],
-        "description": "The Symfony YAML Component.",
-        "autoload": {
-            "classmap": [
-                ""
-            ]
-        }
-    },
-    {
-        "name": "pear-phpunit/Text_Template",
-        "version": "1.1.1",
-        "version_normalized": "1.1.1.0",
-        "time": "2011-10-29 00:58:37",
-        "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/Text_Template-1.1.1.tgz",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "php": ">=5.2.7"
-        },
-        "type": "library",
-        "installation-source": "dist",
         "authors": [
             {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "homepage": ""
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com",
+                "homepage": "http://www.jwage.com/"
+            },
+            {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com",
+                "homepage": "http://www.instaclick.com"
+            },
+            {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+            },
+            {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+            },
+            {
+                "name": "Johannes Schmitt",
+                "email": "schmittjoh@gmail.com",
+                "homepage": "http://jmsyst.com",
+                "role": "Developer of wrapped JMSSerializerBundle"
             }
         ],
-        "description": "Simple template engine.",
-        "autoload": {
-            "classmap": [
-                "Text/Template/Autoload.php",
-                "Text/Template.php"
-            ]
-        }
+        "description": "Common Library for Doctrine projects",
+        "homepage": "http://www.doctrine-project.org",
+        "keywords": [
+            "collections",
+            "spl",
+            "eventmanager",
+            "annotations",
+            "persistence"
+        ]
     },
     {
-        "name": "pear-phpunit/PHPUnit_MockObject",
-        "version": "1.1.1",
-        "version_normalized": "1.1.1.0",
-        "time": "2012-01-16 08:32:58",
+        "name": "symfony/routing",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
+        "target-dir": "Symfony/Component/Routing",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Routing",
+            "reference": "v2.1.3"
+        },
         "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/PHPUnit_MockObject-1.1.1.tgz",
-            "reference": null,
-            "shasum": null
+            "type": "zip",
+            "url": "https://github.com/symfony/Routing/zipball/v2.1.3",
+            "reference": "v2.1.3",
+            "shasum": ""
         },
         "require": {
-            "php": ">=5.2.7",
-            "pear-phpunit/text_template": ">=1.1.1",
-            "ext-reflection": "*",
-            "ext-spl": "*"
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/config": "2.1.*",
+            "symfony/yaml": "2.1.*",
+            "symfony/http-kernel": "2.1.*",
+            "doctrine/common": ">=2.2,<2.4-dev"
         },
         "suggest": {
-            "ext-soap": "*"
+            "symfony/config": "2.1.*",
+            "symfony/yaml": "2.1.*",
+            "doctrine/common": ">=2.2,<2.4-dev"
         },
+        "time": "2012-10-26 02:26:42",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
         "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Routing": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
         "authors": [
             {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "homepage": ""
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
             }
         ],
-        "description": "Mock Object library for PHPUnit",
-        "autoload": {
-            "classmap": [
-                "PHPUnit/Framework/MockObject"
-            ]
-        }
+        "description": "Symfony Routing Component",
+        "homepage": "http://symfony.com"
     },
     {
-        "name": "pear-phpunit/PHP_Timer",
-        "version": "1.0.2",
-        "version_normalized": "1.0.2.0",
-        "time": "2011-09-05 03:38:14",
+        "name": "symfony/http-foundation",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
+        "target-dir": "Symfony/Component/HttpFoundation",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/HttpFoundation",
+            "reference": "v2.1.3"
+        },
         "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/PHP_Timer-1.0.2.tgz",
-            "reference": null,
-            "shasum": null
+            "type": "zip",
+            "url": "https://github.com/symfony/HttpFoundation/zipball/v2.1.3",
+            "reference": "v2.1.3",
+            "shasum": ""
         },
         "require": {
-            "php": ">=5.2.7"
+            "php": ">=5.3.3"
         },
+        "time": "2012-10-20 00:10:30",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
         "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\HttpFoundation": "",
+                "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
         "authors": [
             {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "homepage": ""
-            }
-        ],
-        "description": "Utility class for timing",
-        "autoload": {
-            "classmap": [
-                "PHP/Timer/Autoload.php",
-                "PHP/Timer.php"
-            ]
-        }
-    },
-    {
-        "name": "pear-phpunit/PHP_TokenStream",
-        "version": "1.1.3",
-        "version_normalized": "1.1.3.0",
-        "time": "2012-02-13 11:20:16",
-        "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/PHP_TokenStream-1.1.3.tgz",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "php": ">=5.2.7",
-            "ext-tokenizer": "*"
-        },
-        "type": "library",
-        "installation-source": "dist",
-        "authors": [
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
             {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "homepage": ""
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
             }
         ],
-        "description": "Wrapper around PHP's tokenizer extension.",
-        "autoload": {
-            "classmap": [
-                "PHP"
-            ]
-        }
+        "description": "Symfony HttpFoundation Component",
+        "homepage": "http://symfony.com"
     },
     {
-        "name": "pear-phpunit/File_Iterator",
-        "version": "1.3.1",
-        "version_normalized": "1.3.1.0",
-        "time": "2012-01-08 13:55:06",
+        "name": "symfony/event-dispatcher",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
+        "target-dir": "Symfony/Component/EventDispatcher",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/EventDispatcher",
+            "reference": "v2.1.3"
+        },
         "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/File_Iterator-1.3.1.tgz",
-            "reference": null,
-            "shasum": null
+            "type": "zip",
+            "url": "https://github.com/symfony/EventDispatcher/zipball/v2.1.3",
+            "reference": "v2.1.3",
+            "shasum": ""
         },
         "require": {
-            "php": ">=5.2.7"
+            "php": ">=5.3.3"
         },
-        "type": "library",
-        "installation-source": "dist",
-        "authors": [
-            {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "homepage": ""
-            }
-        ],
-        "description": "FilterIterator implementation that filters files based on a list of suffixes.",
-        "autoload": {
-            "classmap": [
-                "File"
-            ]
-        }
-    },
-    {
-        "name": "pear-phpunit/PHP_CodeCoverage",
-        "version": "1.1.2",
-        "version_normalized": "1.1.2.0",
-        "time": "2012-02-21 04:35:02",
-        "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/PHP_CodeCoverage-1.1.2.tgz",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "php": ">=5.2.7",
-            "pear-phpunit/file_iterator": ">=1.3.0",
-            "pear-phpunit/php_tokenstream": ">=1.1.0",
-            "pear-phpunit/text_template": ">=1.1.1"
+        "require-dev": {
+            "symfony/dependency-injection": "2.1.*"
         },
         "suggest": {
-            "ext-dom": "*",
-            "ext-reflection": "*",
-            "ext-spl": "*",
-            "ext-xdebug": ">=2.0.5"
+            "symfony/dependency-injection": "2.1.*",
+            "symfony/http-kernel": "2.1.*"
         },
+        "time": "2012-10-04 08:17:57",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
         "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\EventDispatcher": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
         "authors": [
             {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "homepage": ""
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
             }
         ],
-        "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
-        "autoload": {
-            "classmap": {
-                "1": "PHP"
-            }
-        }
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "http://symfony.com"
     },
     {
-        "name": "pear-phpunit/PHPUnit",
-        "version": "3.6.11",
-        "version_normalized": "3.6.11.0",
-        "time": "2012-05-28 23:58:12",
+        "name": "symfony/http-kernel",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
+        "target-dir": "Symfony/Component/HttpKernel",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/HttpKernel",
+            "reference": "v2.1.3"
+        },
         "dist": {
-            "type": "pear",
-            "url": "http://pear.phpunit.de/get/PHPUnit-3.6.11.tgz",
-            "reference": null,
-            "shasum": null
+            "type": "zip",
+            "url": "https://github.com/symfony/HttpKernel/zipball/v2.1.3",
+            "reference": "v2.1.3",
+            "shasum": ""
         },
         "require": {
-            "php": ">=5.2.7",
-            "pear-phpunit/file_iterator": ">=1.3.0",
-            "pear-phpunit/text_template": ">=1.1.1",
-            "pear-phpunit/php_codecoverage": ">=1.1.0",
-            "pear-phpunit/php_timer": ">=1.0.1",
-            "pear-phpunit/phpunit_mockobject": ">=1.1.0",
-            "pear-symfony/yaml": ">=1.0.2",
-            "ext-dom": "*",
-            "ext-pcre": "*",
-            "ext-reflection": "*",
-            "ext-spl": "*"
+            "php": ">=5.3.3",
+            "symfony/event-dispatcher": "2.1.*",
+            "symfony/http-foundation": "2.1.*"
+        },
+        "require-dev": {
+            "symfony/browser-kit": "2.1.*",
+            "symfony/class-loader": "2.1.*",
+            "symfony/config": "2.1.*",
+            "symfony/console": "2.1.*",
+            "symfony/dependency-injection": "2.1.*",
+            "symfony/finder": "2.1.*",
+            "symfony/process": "2.1.*",
+            "symfony/routing": "2.1.*"
         },
         "suggest": {
-            "pear-phpunit/PHP_Invoker": ">=1.1.0",
-            "ext-json": "*",
-            "ext-simplexml": "*",
-            "ext-tokenizer": "*"
+            "symfony/browser-kit": "2.1.*",
+            "symfony/class-loader": "2.1.*",
+            "symfony/config": "2.1.*",
+            "symfony/console": "2.1.*",
+            "symfony/dependency-injection": "2.1.*",
+            "symfony/finder": "2.1.*"
         },
+        "time": "2012-10-30 01:14:14",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
         "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\HttpKernel": ""
+            }
+        },
+        "license": [
+            "MIT"
+        ],
         "authors": [
             {
-                "name": "Sebastian Bergmann",
-                "email": "sebastian@phpunit.de",
-                "homepage": ""
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
             }
         ],
-        "description": "The PHP Unit Testing framework.",
-        "autoload": {
-            "classmap": {
-                "1": "PHPUnit"
+        "description": "Symfony HttpKernel Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "pimple/pimple",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/fabpot/Pimple.git",
+            "reference": "v1.0.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fabpot/Pimple/zipball/v1.0.0",
+            "reference": "v1.0.0",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2012-05-08 06:57:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
             }
-        }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pimple": "lib/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
+        "homepage": "http://pimple.sensiolabs.org",
+        "keywords": [
+            "dependency injection",
+            "container"
+        ]
+    },
+    {
+        "name": "silex/silex",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/fabpot/Silex.git",
+            "reference": "dd39fd366b7e978ed6b48923290f0b55d99d0d91"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/fabpot/Silex/zipball/dd39fd366b7e978ed6b48923290f0b55d99d0d91",
+            "reference": "dd39fd366b7e978ed6b48923290f0b55d99d0d91",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "pimple/pimple": "1.*",
+            "symfony/event-dispatcher": ">=2.1,<2.3-dev",
+            "symfony/http-foundation": ">=2.1,<2.3-dev",
+            "symfony/http-kernel": ">=2.1,<2.3-dev",
+            "symfony/routing": ">=2.1,<2.3-dev"
+        },
+        "require-dev": {
+            "monolog/monolog": ">=1.0.0,<1.2-dev",
+            "twig/twig": ">=1.8.0,<2.0-dev",
+            "swiftmailer/swiftmailer": "4.2.*",
+            "doctrine/dbal": ">=2.2.0,<2.4.0-dev",
+            "symfony/security": ">=2.1,<2.3-dev",
+            "symfony/config": ">=2.1,<2.3-dev",
+            "symfony/locale": ">=2.1,<2.3-dev",
+            "symfony/form": ">=2.1,<2.3-dev",
+            "symfony/browser-kit": ">=2.1,<2.3-dev",
+            "symfony/css-selector": ">=2.1,<2.3-dev",
+            "symfony/finder": ">=2.1,<2.3-dev",
+            "symfony/monolog-bridge": ">=2.1,<2.3-dev",
+            "symfony/process": ">=2.1,<2.3-dev",
+            "symfony/translation": ">=2.1,<2.3-dev",
+            "symfony/twig-bridge": ">=2.1,<2.3-dev",
+            "symfony/validator": ">=2.1,<2.3-dev",
+            "symfony/serializer": ">=2.1,<2.3-dev"
+        },
+        "suggest": {
+            "symfony/browser-kit": ">=2.1,<2.3-dev",
+            "symfony/css-selector": ">=2.1,<2.3-dev",
+            "symfony/dom-crawler": ">=2.1,<2.3-dev"
+        },
+        "time": "2012-10-31 09:30:53",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Silex": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Igor Wiedler",
+                "email": "igor@wiedler.ch",
+                "homepage": "http://wiedler.ch/igor/"
+            }
+        ],
+        "description": "The PHP micro-framework based on the Symfony2 Components",
+        "homepage": "http://silex.sensiolabs.org",
+        "keywords": [
+            "microframework"
+        ]
     },
     {
         "name": "twig/twig",
         "version": "v1.8.3",
         "version_normalized": "1.8.3.0",
-        "time": "2012-06-15 21:48:16",
         "source": {
             "type": "git",
             "url": "git://github.com/fabpot/Twig.git",
@@ -287,6 +440,7 @@
         "require": {
             "php": ">=5.2.4"
         },
+        "time": "2012-06-17 11:48:16",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -294,505 +448,465 @@
             }
         },
         "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
         "license": [
             "BSD-3"
         ],
         "authors": [
             {
                 "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
+                "email": "fabien@symfony.com"
             },
             {
                 "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "homepage": null,
-                "role": null
+                "email": "armin.ronacher@active-4.com"
             }
         ],
         "description": "Twig, the flexible, fast, and secure template language for PHP",
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
-        ],
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        }
+        ]
     },
     {
-        "name": "pimple/pimple",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "time": "2012-06-19 16:34:38",
+        "name": "symfony/yaml",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
+        "target-dir": "Symfony/Component/Yaml",
         "source": {
             "type": "git",
-            "url": "git://github.com/fabpot/Pimple.git",
-            "reference": "86cae5c9e85cd02f1703c774ddf12f2448a5938c"
+            "url": "https://github.com/symfony/Yaml",
+            "reference": "v2.1.3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/fabpot/Pimple/zipball/86cae5c9e85cd02f1703c774ddf12f2448a5938c",
-            "reference": "86cae5c9e85cd02f1703c774ddf12f2448a5938c",
+            "url": "https://github.com/symfony/Yaml/zipball/v2.1.3",
+            "reference": "v2.1.3",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.0"
+            "php": ">=5.3.3"
         },
+        "time": "2012-10-29 04:15:41",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.0.x-dev"
+                "dev-master": "2.1-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Yaml": ""
+            }
+        },
         "license": [
             "MIT"
         ],
         "authors": [
             {
                 "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
             }
         ],
-        "description": "Pimple is a simple Dependency Injection Container for PHP 5.3",
-        "homepage": "http://pimple.sensiolabs.org",
+        "description": "Symfony Yaml Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "phpunit/php-text-template",
+        "version": "1.1.4",
+        "version_normalized": "1.1.4.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/sebastianbergmann/php-text-template.git",
+            "reference": "1.1.4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/sebastianbergmann/php-text-template/zipball/1.1.4",
+            "reference": "1.1.4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2012-10-31 11:15:28",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "Text/"
+            ]
+        },
+        "include-path": [
+            ""
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Simple template engine.",
+        "homepage": "https://github.com/sebastianbergmann/php-text-template/",
         "keywords": [
-            "dependency injection",
-            "container"
-        ],
-        "autoload": {
-            "psr-0": {
-                "Pimple": "lib/"
-            }
-        }
+            "template"
+        ]
     },
     {
-        "name": "symfony/event-dispatcher",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Symfony/Component/EventDispatcher",
-        "time": "2012-05-24 19:48:33",
+        "name": "phpunit/phpunit-mock-objects",
+        "version": "1.2.1",
+        "version_normalized": "1.2.1.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/symfony/EventDispatcher",
-            "reference": "v2.1.0-BETA1"
+            "url": "git://github.com/sebastianbergmann/phpunit-mock-objects.git",
+            "reference": "1.2.1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/EventDispatcher/zipball/v2.1.0-BETA1",
-            "reference": "v2.1.0-BETA1",
+            "url": "https://github.com/sebastianbergmann/phpunit-mock-objects/zipball/1.2.1",
+            "reference": "1.2.1",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/dependency-injection": "2.1.*"
-        },
-        "suggest": {
-            "symfony/dependency-injection": "dev-master",
-            "symfony/http-kernel": "dev-master"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
-            }
-        ],
-        "description": "Symfony EventDispatcher Component",
-        "homepage": "http://symfony.com",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\EventDispatcher": ""
-            }
-        }
-    },
-    {
-        "name": "symfony/routing",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Symfony/Component/Routing",
-        "time": "2012-06-23 23:50:03",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Routing",
-            "reference": "ed1a7d9118dd1ee332b485f19b920a9e0077022a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/symfony/Routing/zipball/ed1a7d9118dd1ee332b485f19b920a9e0077022a",
-            "reference": "ed1a7d9118dd1ee332b485f19b920a9e0077022a",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/config": "2.1.*",
-            "symfony/yaml": "2.1.*",
-            "doctrine/common": ">=2.2,<2.4-dev",
-            "symfony/http-kernel": "2.1.*"
-        },
-        "suggest": {
-            "symfony/config": "dev-master",
-            "symfony/yaml": "dev-master",
-            "doctrine/common": ">=2.2,<2.4-dev"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
-            }
-        ],
-        "description": "Symfony Routing Component",
-        "homepage": "http://symfony.com",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Routing": ""
-            }
-        }
-    },
-    {
-        "name": "symfony/http-foundation",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Symfony/Component/HttpFoundation",
-        "time": "2012-06-28 04:35:09",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/HttpFoundation",
-            "reference": "e14cccb290443379bfd14f7c48901e07d076013e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/symfony/HttpFoundation/zipball/e14cccb290443379bfd14f7c48901e07d076013e",
-            "reference": "e14cccb290443379bfd14f7c48901e07d076013e",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
-            }
-        ],
-        "description": "Symfony HttpFoundation Component",
-        "homepage": "http://symfony.com",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\HttpFoundation": "",
-                "SessionHandlerInterface": "Symfony/Component/HttpFoundation/Resources/stubs"
-            }
-        }
-    },
-    {
-        "name": "symfony/http-kernel",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "target-dir": "Symfony/Component/HttpKernel",
-        "time": "2012-06-28 12:31:02",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/HttpKernel",
-            "reference": "6d69fa82c21aa752e7d6aa7c35b70923fd55f450"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/symfony/HttpKernel/zipball/6d69fa82c21aa752e7d6aa7c35b70923fd55f450",
-            "reference": "6d69fa82c21aa752e7d6aa7c35b70923fd55f450",
-            "shasum": ""
-        },
-        "require": {
-            "symfony/event-dispatcher": "2.1.*",
-            "symfony/http-foundation": "2.1.*",
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/browser-kit": "2.1.*",
-            "symfony/class-loader": "2.1.*",
-            "symfony/config": "2.1.*",
-            "symfony/console": "2.1.*",
-            "symfony/dependency-injection": "2.1.*",
-            "symfony/finder": "2.1.*",
-            "symfony/process": "2.1.*",
-            "symfony/routing": "2.1.*"
-        },
-        "suggest": {
-            "symfony/browser-kit": "dev-master",
-            "symfony/class-loader": "dev-master",
-            "symfony/config": "dev-master",
-            "symfony/console": "dev-master",
-            "symfony/dependency-injection": "dev-master",
-            "symfony/finder": "dev-master"
-        },
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.1-dev"
-            }
-        },
-        "installation-source": "source",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
-            }
-        ],
-        "description": "Symfony HttpKernel Component",
-        "homepage": "http://symfony.com",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\HttpKernel": ""
-            }
-        }
-    },
-    {
-        "name": "silex/silex",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "time": "2012-06-28 12:45:24",
-        "source": {
-            "type": "git",
-            "url": "git://github.com/fabpot/Silex.git",
-            "reference": "4b6c46eeb658673d4fcdd62faa6cf3b98cd53087"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/fabpot/Silex/zipball/4b6c46eeb658673d4fcdd62faa6cf3b98cd53087",
-            "reference": "4b6c46eeb658673d4fcdd62faa6cf3b98cd53087",
-            "shasum": ""
-        },
-        "require": {
-            "symfony/event-dispatcher": "2.1.*",
-            "symfony/http-foundation": "2.1.*",
-            "symfony/http-kernel": "2.1.*",
-            "symfony/routing": "2.1.*",
             "php": ">=5.3.3",
-            "pimple/pimple": "1.*"
-        },
-        "require-dev": {
-            "symfony/form": "2.1.*",
-            "symfony/translation": "2.1.*",
-            "symfony/twig-bridge": "2.1.*",
-            "symfony/validator": "2.1.*",
-            "doctrine/dbal": "2.1.*",
-            "symfony/monolog-bridge": "2.1.*",
-            "swiftmailer/swiftmailer": "4.1.*",
-            "symfony/browser-kit": "2.1.*",
-            "symfony/css-selector": "2.1.*",
-            "symfony/finder": "2.1.*",
-            "symfony/process": "2.1.*",
-            "symfony/security": "2.1.*",
-            "monolog/monolog": ">=1.0.0,<1.2-dev",
-            "twig/twig": ">=1.2.0,<2.0-dev",
-            "symfony/config": "2.1.*",
-            "symfony/locale": "2.1.*"
+            "phpunit/php-text-template": ">=1.1.1@stable",
+            "ext-reflection": "*",
+            "ext-spl": "*"
         },
         "suggest": {
-            "symfony/browser-kit": "2.1.*",
-            "symfony/css-selector": "2.1.*",
-            "symfony/dom-crawler": "2.1.*"
+            "ext-soap": "*"
         },
+        "time": "2012-10-05 00:00:00",
         "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PHPUnit/"
+            ]
         },
-        "installation-source": "source",
+        "include-path": [
+            ""
+        ],
         "license": [
-            "MIT"
+            "BSD-3-Clause"
         ],
         "authors": [
             {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Igor Wiedler",
-                "email": "igor@wiedler.ch",
-                "homepage": "http://wiedler.ch/igor/",
-                "role": null
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
             }
         ],
-        "description": "The PHP micro-framework based on the Symfony2 Components",
-        "homepage": "http://silex.sensiolabs.org",
+        "description": "Mock Object library for PHPUnit",
+        "homepage": "http://www.phpunit.de/",
         "keywords": [
-            "microframework"
-        ],
-        "autoload": {
-            "psr-0": {
-                "Silex": "src/"
-            }
-        }
+            "mock",
+            "xunit"
+        ]
     },
     {
-        "name": "doctrine/common",
+        "name": "phpunit/php-timer",
+        "version": "1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/sebastianbergmann/php-timer.git",
+            "reference": "1.0.4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/sebastianbergmann/php-timer/zipball/1.0.4",
+            "reference": "1.0.4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2012-10-11 04:45:58",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PHP/"
+            ]
+        },
+        "include-path": [
+            ""
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Utility class for timing",
+        "homepage": "http://www.phpunit.de/",
+        "keywords": [
+            "timer"
+        ]
+    },
+    {
+        "name": "phpunit/php-token-stream",
+        "version": "1.1.5",
+        "version_normalized": "1.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/sebastianbergmann/php-token-stream.git",
+            "reference": "1.1.5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/sebastianbergmann/php-token-stream/zipball/1.1.5",
+            "reference": "1.1.5",
+            "shasum": ""
+        },
+        "require": {
+            "ext-tokenizer": "*",
+            "php": ">=5.3.3"
+        },
+        "time": "2012-10-11 04:47:14",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PHP/"
+            ]
+        },
+        "include-path": [
+            ""
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Wrapper around PHP's tokenizer extension.",
+        "homepage": "http://www.phpunit.de/",
+        "keywords": [
+            "tokenizer"
+        ]
+    },
+    {
+        "name": "phpunit/php-file-iterator",
+        "version": "1.3.3",
+        "version_normalized": "1.3.3.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/sebastianbergmann/php-file-iterator.git",
+            "reference": "1.3.3"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/sebastianbergmann/php-file-iterator/zipball/1.3.3",
+            "reference": "1.3.3",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "time": "2012-10-11 04:44:38",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "File/"
+            ]
+        },
+        "include-path": [
+            ""
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+        "homepage": "http://www.phpunit.de/",
+        "keywords": [
+            "filesystem",
+            "iterator"
+        ]
+    },
+    {
+        "name": "phpunit/php-code-coverage",
+        "version": "1.2.6",
+        "version_normalized": "1.2.6.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/sebastianbergmann/php-code-coverage.git",
+            "reference": "1.2.6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/sebastianbergmann/php-code-coverage/zipball/1.2.6",
+            "reference": "1.2.6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "phpunit/php-file-iterator": ">=1.3.0@stable",
+            "phpunit/php-token-stream": ">=1.1.3@stable",
+            "phpunit/php-text-template": ">=1.1.1@stable"
+        },
+        "suggest": {
+            "ext-dom": "*",
+            "ext-xdebug": ">=2.0.5"
+        },
+        "time": "2012-10-16 22:34:13",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PHP/"
+            ]
+        },
+        "include-path": [
+            ""
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+        "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+        "keywords": [
+            "testing",
+            "coverage",
+            "xunit"
+        ]
+    },
+    {
+        "name": "phpunit/phpunit",
+        "version": "3.7.8",
+        "version_normalized": "3.7.8.0",
+        "source": {
+            "type": "git",
+            "url": "git://github.com/sebastianbergmann/phpunit.git",
+            "reference": "3.7.8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/sebastianbergmann/phpunit/zipball/3.7.8",
+            "reference": "3.7.8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "phpunit/php-file-iterator": ">=1.3.1",
+            "phpunit/php-text-template": ">=1.1.1",
+            "phpunit/php-code-coverage": ">=1.2.1",
+            "phpunit/php-timer": ">=1.0.2",
+            "phpunit/phpunit-mock-objects": ">=1.2.0",
+            "symfony/yaml": ">=2.1.0",
+            "ext-dom": "*",
+            "ext-pcre": "*",
+            "ext-reflection": "*",
+            "ext-spl": "*"
+        },
+        "suggest": {
+            "phpunit/php-invoker": ">=1.1.0",
+            "ext-json": "*",
+            "ext-simplexml": "*",
+            "ext-tokenizer": "*"
+        },
+        "time": "2012-10-16 22:37:08",
+        "bin": [
+            "composer/bin/phpunit"
+        ],
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.7.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PHPUnit/"
+            ]
+        },
+        "include-path": [
+            "",
+            "../../symfony/yaml/"
+        ],
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+            }
+        ],
+        "description": "The PHP Unit Testing framework.",
+        "homepage": "http://www.phpunit.de/",
+        "keywords": [
+            "testing",
+            "phpunit",
+            "xunit"
+        ]
+    },
+    {
+        "name": "doctrine/dbal",
         "version": "2.2.2",
         "version_normalized": "2.2.2.0",
-        "time": "2012-04-12 22:46:44",
         "source": {
             "type": "git",
-            "url": "https://github.com/doctrine/common",
+            "url": "https://github.com/doctrine/dbal",
             "reference": "2.2.2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/doctrine/common/zipball/2.2.2",
+            "url": "https://github.com/doctrine/dbal/zipball/2.2.2",
             "reference": "2.2.2",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.2"
-        },
-        "type": "library",
-        "installation-source": "dist",
-        "license": [
-            "LGPL"
-        ],
-        "authors": [
-            {
-                "name": "Jonathan Wage",
-                "email": "jonwage@gmail.com",
-                "homepage": "http://www.jwage.com/",
-                "role": null
-            },
-            {
-                "name": "Guilherme Blanco",
-                "email": "guilhermeblanco@gmail.com",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Roman Borschel",
-                "email": "roman@code-factory.org",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de",
-                "homepage": null,
-                "role": null
-            },
-            {
-                "name": "Johannes Schmitt",
-                "email": "schmittjoh@gmail.com",
-                "homepage": "https://github.com/schmittjoh",
-                "role": null
-            }
-        ],
-        "description": "Common Library for Doctrine projects",
-        "homepage": "http://www.doctrine-project.org",
-        "keywords": [
-            "collections",
-            "spl",
-            "eventmanager",
-            "annotations",
-            "persistence"
-        ],
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\Common": "lib/"
-            }
-        }
-    },
-    {
-        "name": "doctrine/dbal",
-        "version": "2.2.x-dev",
-        "version_normalized": "2.2.9999999.9999999-dev",
-        "time": "2012-05-27 01:08:36",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/doctrine/dbal",
-            "reference": "8cc129aa64a8de6447056bce20f0a274fe2a340b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://github.com/doctrine/dbal/zipball/8cc129aa64a8de6447056bce20f0a274fe2a340b",
-            "reference": "8cc129aa64a8de6447056bce20f0a274fe2a340b",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.2",
             "doctrine/common": ">=2.2.0,<=2.2.99"
         },
+        "time": "2012-04-13 00:56:12",
         "type": "library",
-        "installation-source": "source",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Doctrine\\DBAL": "lib/"
+            }
+        },
         "license": [
             "LGPL"
         ],
@@ -800,26 +914,20 @@
             {
                 "name": "Jonathan Wage",
                 "email": "jonwage@gmail.com",
-                "homepage": "http://www.jwage.com/",
-                "role": null
+                "homepage": "http://www.jwage.com/"
             },
             {
                 "name": "Guilherme Blanco",
                 "email": "guilhermeblanco@gmail.com",
-                "homepage": null,
-                "role": null
+                "homepage": "http://www.instaclick.com"
             },
             {
                 "name": "Roman Borschel",
-                "email": "roman@code-factory.org",
-                "homepage": null,
-                "role": null
+                "email": "roman@code-factory.org"
             },
             {
                 "name": "Benjamin Eberlei",
-                "email": "kontakt@beberlei.de",
-                "homepage": null,
-                "role": null
+                "email": "kontakt@beberlei.de"
             }
         ],
         "description": "Database Abstraction Layer",
@@ -829,55 +937,51 @@
             "persistence",
             "dbal",
             "queryobject"
-        ],
-        "autoload": {
-            "psr-0": {
-                "Doctrine\\DBAL": "lib/"
-            }
-        }
+        ]
     },
     {
         "name": "symfony/options-resolver",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
         "target-dir": "Symfony/Component/OptionsResolver",
-        "time": "2012-06-12 12:23:19",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/OptionsResolver",
-            "reference": "915b39d1e0ad1c1f2526b93a16a10e5e504aefad"
+            "reference": "v2.1.3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/OptionsResolver/zipball/915b39d1e0ad1c1f2526b93a16a10e5e504aefad",
-            "reference": "915b39d1e0ad1c1f2526b93a16a10e5e504aefad",
+            "url": "https://github.com/symfony/OptionsResolver/zipball/v2.1.3",
+            "reference": "v2.1.3",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.3"
         },
+        "time": "2012-10-04 08:17:57",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.1-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\OptionsResolver": ""
+            }
+        },
         "license": [
             "MIT"
         ],
         "authors": [
             {
                 "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
+                "email": "fabien@symfony.com"
             },
             {
                 "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
+                "homepage": "http://symfony.com/contributors"
             }
         ],
         "description": "Symfony OptionsResolver Component",
@@ -886,28 +990,22 @@
             "configuration",
             "config",
             "options"
-        ],
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\OptionsResolver": ""
-            }
-        }
+        ]
     },
     {
         "name": "symfony/locale",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
         "target-dir": "Symfony/Component/Locale",
-        "time": "2012-05-31 03:04:03",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Locale",
-            "reference": "v2.1.0-BETA1"
+            "reference": "v2.1.3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/Locale/zipball/v2.1.0-BETA1",
-            "reference": "v2.1.0-BETA1",
+            "url": "https://github.com/symfony/Locale/zipball/v2.1.3",
+            "reference": "v2.1.3",
             "shasum": ""
         },
         "require": {
@@ -916,59 +1014,55 @@
         "suggest": {
             "ext-intl": ">=5.3.3"
         },
+        "time": "2012-10-20 00:10:30",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.1-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Locale": ""
+            }
+        },
         "license": [
             "MIT"
         ],
         "authors": [
             {
                 "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
+                "email": "fabien@symfony.com"
             },
             {
                 "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
+                "homepage": "http://symfony.com/contributors"
             }
         ],
         "description": "Symfony Locale Component",
-        "homepage": "http://symfony.com",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Locale": ""
-            }
-        }
+        "homepage": "http://symfony.com"
     },
     {
         "name": "symfony/form",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v2.1.3",
+        "version_normalized": "2.1.3.0",
         "target-dir": "Symfony/Component/Form",
-        "time": "2012-06-28 14:10:42",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/Form",
-            "reference": "afe2e7afb94905ae3f3bfbc1ec88c094f823844e"
+            "reference": "v2.1.3"
         },
         "dist": {
             "type": "zip",
-            "url": "https://github.com/symfony/Form/zipball/afe2e7afb94905ae3f3bfbc1ec88c094f823844e",
-            "reference": "afe2e7afb94905ae3f3bfbc1ec88c094f823844e",
+            "url": "https://github.com/symfony/Form/zipball/v2.1.3",
+            "reference": "v2.1.3",
             "shasum": ""
         },
         "require": {
+            "php": ">=5.3.3",
             "symfony/event-dispatcher": "2.1.*",
             "symfony/locale": "2.1.*",
-            "php": ">=5.3.3",
             "symfony/options-resolver": "2.1.*"
         },
         "require-dev": {
@@ -976,39 +1070,36 @@
             "symfony/http-foundation": "2.1.*"
         },
         "suggest": {
-            "symfony/validator": "dev-master",
-            "symfony/http-foundation": "dev-master"
+            "symfony/validator": "2.1.*",
+            "symfony/http-foundation": "2.1.*"
         },
+        "time": "2012-10-22 07:37:12",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "2.1-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Form": ""
+            }
+        },
         "license": [
             "MIT"
         ],
         "authors": [
             {
                 "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": null,
-                "role": null
+                "email": "fabien@symfony.com"
             },
             {
                 "name": "Symfony Community",
-                "email": null,
-                "homepage": "http://symfony.com/contributors",
-                "role": null
+                "homepage": "http://symfony.com/contributors"
             }
         ],
         "description": "Symfony Form Component",
-        "homepage": "http://symfony.com",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Form": ""
-            }
-        }
+        "homepage": "http://symfony.com"
     }
 ]
