@@ -11,6 +11,9 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
 
+// URL Generator
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
+
 // member
 $app->register(new SilexTutorial\Provider\MemberServiceProvider());
 
@@ -34,7 +37,7 @@ $app->register(new Silex\Provider\FormServiceProvider());
 
 $app->get('/', function() use($app) {
     return $app['twig']->render('index.html');
-});
+})->bind('index');
 
 $app->mount('/member', new SilexTutorial\Provider\MemberControllerProvider());
 $app->mount('/admin', new SilexTutorial\Provider\AdminControllerProvider());
